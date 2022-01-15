@@ -1,0 +1,27 @@
+{
+  "name": "1c-ibcmd-runner",
+  "version": "1.0.0",
+  "description": "обертка для упрощения работы с CLI автономного сервера 1С.",
+  "main": "index.js",
+  "bin": {
+    "1c-ibcmd-runner": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afanasievkirill/1C-ibcmd-runner.git"
+  },
+  "keywords": [
+    "1c"
+  ],
+  "author": "afanasiev kirill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afanasievkirill/1C-ibcmd-runner/issues"
+  },
+  "homepage": "https://github.com/afanasievkirill/1C-ibcmd-runner#readme"
+}
