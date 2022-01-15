@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/afanasievkirill/1C-ibcmd-runner/issues"
   },
-  "homepage": "https://github.com/afanasievkirill/1C-ibcmd-runner#readme"
+  "homepage": "https://github.com/afanasievkirill/1C-ibcmd-runner#readme",
+  "devDependencies": {}
 }
