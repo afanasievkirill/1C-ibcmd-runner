@@ -1,39 +1,23 @@
-import { printError } from '../services/log.service.js';
-import { ARGS_ERROR, DB_TYPE } from '../constants/args.constants.js';
 import { getWorkDirectory } from '../services/storage.service.js';
+import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer } from './set-args.helper.js';
 
 export const getCmd = (args) => {
 
-	if (!args.dbms) {
-		return printError(ARGS_ERROR.dbms)
-	};
-	if (args.dbms != DB_TYPE.MSSQLServer && args.dbms != DB_TYPE.PostgreSQL) {
-		return printError(ARGS_ERROR.dbtype)
-	};
-	if (!args.server) {
-		return printError(ARGS_ERROR.server)
-	};
-	if (!args.dbuser) {
-		return printError(ARGS_ERROR.dbuser)
-	}
-	if (!args.dbpwd) {
-		return printError(ARGS_ERROR.dbpwd)
-	}
 	return [
 		"infobase",
 		"config",
 		"import",
 		`--data=${getWorkDirectory}`,
 		"--dbms",
-		`${args.dbms}`,
+		`${setDbms(args)}`,
 		"--db-server",
-		`${args.server}`,
+		`${setServer(args)}`,
 		"--db-name",
-		`${args.dbname}`,
+		`${setDbname(args)}`,
 		"--db-user",
-		`${args.dbuser}`,
+		`${setDbUser(args)}`,
 		"--db-pwd",
-		`${args.dbpwd}`,
-		`${args.cfpath}`
+		`${setDbPwd(args)}`,
+		`${setCfPath(args)}`
 	];
 }

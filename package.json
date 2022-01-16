@@ -1,7 +1,7 @@
 {
   "name": "1c-ibcmd-runner",
   "version": "1.0.0",
-  "description": "обертка для упрощения работы с CLI автономного сервера 1С.",
+  "description": "Библиотека взаимодействия с Автономным сервером 1С.",
   "main": "index.js",
   "bin": {
     "1c-ibcmd-runner": "index.js"
@@ -24,5 +24,8 @@
     "url": "https://github.com/afanasievkirill/1C-ibcmd-runner/issues"
   },
   "homepage": "https://github.com/afanasievkirill/1C-ibcmd-runner#readme",
-  "devDependencies": {}
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "dedent-js": "^1.0.1"
+  }
 }

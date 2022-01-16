@@ -1,9 +1,10 @@
 import { run } from './services/ibcmd.service.js'
 import { getArgs } from './helpers/args.helper.js';
-import { printHelp, printArgs } from './services/log.service.js';
+import { printHelp, printArgs, printVersion } from './services/log.service.js';
 import { setParams } from './helpers/storage.helper.js';
 import { getAllValue } from './services/storage.service.js';
 import { getCmd } from './helpers/ibcmd.helper.js';
+
 
 const initCli = async () => {
 	const args = getArgs(process.argv);
@@ -13,6 +14,9 @@ const initCli = async () => {
 	if (args.help) {
 		return printHelp();
 	};
+	if (args.version) {
+		return printVersion();
+	}
 	if (args.param) {
 		const data = await getAllValue();
 		return printArgs(data);
