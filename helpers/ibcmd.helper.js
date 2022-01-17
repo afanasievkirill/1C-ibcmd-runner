@@ -1,5 +1,5 @@
 import { getWorkDirectory } from '../services/storage.service.js';
-import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer, setCfePath } from './set-args.helper.js';
+import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer, setCfePath, setCfeName } from './set-args.helper.js';
 
 const getLoadLine = async (args) => {
 
