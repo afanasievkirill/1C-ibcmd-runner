@@ -25,5 +25,5 @@ $ yarn add -g 1c-ibcmd-runner
 Ключ `-help` выведет справку по параметрам.
 
 ```cmd
-1c-ibcmd-runner -help
+1c-cli -help
 ```

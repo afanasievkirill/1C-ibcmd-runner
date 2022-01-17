@@ -1,14 +1,14 @@
 {
   "name": "1c-ibcmd-runner",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "Библиотека взаимодействия с Автономным сервером 1С.",
-  "main": "index.js",
+  "main": "cli.js",
   "bin": {
-    "1c-ibcmd": "./index.js"
+    "1c-cli": "./cli.js"
   },
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
