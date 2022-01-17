@@ -23,9 +23,7 @@ const initCli = async () => {
 	};
 	if (args.load) {
 		const data = await getAllValue();
-		console.log(data)
 		const line = await getLoadLine(data);
-		console.log(line)
 		if (line) {
 			return run(data.user, data.password, line);
 		};

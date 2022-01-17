@@ -8,7 +8,7 @@ const run = (login, password, jobParams) => {
 
 	const ls = spawn("ibcmd", jobParams);
 
-	ls.stdin.write(`${login}\n${password}\n`);
+	ls.stdin.write(`${login}\n${password}\ny\ny\n`);
 
 	ls.stdout.on('data', data => {
 		printData(data.toString());

@@ -18,10 +18,12 @@ const saveKeyValue = async (key, value) => {
 const getWorkDirectory = async () => {
 	if (!isExist(wortDirPath)) {
 		await promises.mkdir(wortDirPath);
-	} else {
+	}
+	/*else {
 		await promises.rmdir(wortDirPath);
 		await promises.mkdir(wortDirPath);
 	}
+	*/
 	return wortDirPath;
 }
 
