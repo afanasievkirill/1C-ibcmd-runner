@@ -1,4 +1,4 @@
-import { ARGS_ERROR } from '../constants/args.constants';
+import { ARGS_ERROR } from '../constants/args.constants.js';
 
 const setDbms = (args) => {
 	if (!args.dbms) {
