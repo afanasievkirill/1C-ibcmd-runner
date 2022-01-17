@@ -46,7 +46,7 @@ const getLoadExtLine = async (args) => {
 	return [
 		"infobase",
 		"config",
-		"load",
+		"import",
 		`--data=${await getWorkDirectory()}`,
 		"--dbms",
 		`${setDbms(args)}`,
@@ -63,4 +63,24 @@ const getLoadExtLine = async (args) => {
 	]
 }
 
-export { getLoadLine, getUpdateLine, getLoadExtLine }
+const getUpdateExtLine = async (args) => {
+	return [
+		"infobase",
+		"config",
+		"apply",
+		`--data=${await getWorkDirectory()}`,
+		"--dbms",
+		`${setDbms(args)}`,
+		"--db-server",
+		`${setServer(args)}`,
+		"--db-name",
+		`${setDbname(args)}`,
+		"--db-user",
+		`${setDbUser(args)}`,
+		"--db-pwd",
+		`${setDbPwd(args)}`,
+		`--extension=${setCfeName(args)}`
+	]
+}
+
+export { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine }
