@@ -1,13 +1,13 @@
 import { getWorkDirectory } from '../services/storage.service.js';
 import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer } from './set-args.helper.js';
 
-const getLoadLine = (args) => {
+const getLoadLine = async (args) => {
 
 	return [
 		"infobase",
 		"config",
 		"import",
-		`--data=${getWorkDirectory}`,
+		`--data=${await getWorkDirectory()}`,
 		"--dbms",
 		`${setDbms(args)}`,
 		"--db-server",
@@ -22,12 +22,12 @@ const getLoadLine = (args) => {
 	];
 }
 
-const getUpdateLine = (args) => {
+const getUpdateLine = async (args) => {
 	return [
 		"infobase",
 		"config",
 		"apply",
-		`--data=${getWorkDirectory}`,
+		`--data=${await getWorkDirectory()}`,
 		"--dbms",
 		`${setDbms(args)}`,
 		"--db-server",

@@ -24,15 +24,15 @@ const initCli = async () => {
 	if (args.load) {
 		const data = await getAllValue();
 		console.log(data)
-		const line = getLoadLine(data);
+		const line = await getLoadLine(data);
 		console.log(line)
 		if (line) {
 			return run(data.user, data.password, line);
 		};
 	};
 	if (args.update) {
-		const data = getAllValue();
-		const line = getUpdateLine(data);
+		const data = await getAllValue();
+		const line = await getUpdateLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
