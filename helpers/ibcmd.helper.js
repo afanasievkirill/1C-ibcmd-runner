@@ -1,5 +1,5 @@
 import { getWorkDirectory } from '../services/storage.service.js';
-import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer } from './set-args.helper.js';
+import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer, setCfePath } from './set-args.helper.js';
 
 const getLoadLine = async (args) => {
 
@@ -37,8 +37,30 @@ const getUpdateLine = async (args) => {
 		"--db-user",
 		`${setDbUser(args)}`,
 		"--db-pwd",
-		`${setDbPwd(args)}`
+		`${setDbPwd(args)}`,
+
 	]
 }
 
-export { getLoadLine, getUpdateLine }
+const getLoadExtLine = async (args) => {
+	return [
+		"infobase",
+		"config",
+		"load",
+		`--data=${await getWorkDirectory()}`,
+		"--dbms",
+		`${setDbms(args)}`,
+		"--db-server",
+		`${setServer(args)}`,
+		"--db-name",
+		`${setDbname(args)}`,
+		"--db-user",
+		`${setDbUser(args)}`,
+		"--db-pwd",
+		`${setDbPwd(args)}`,
+		`--extension=${setCfeName(args)}`,
+		`${setCfePath(args)}`
+	]
+}
+
+export { getLoadLine, getUpdateLine, getLoadExtLine }

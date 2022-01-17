@@ -59,4 +59,12 @@ const setCfeName = (args) => {
 	}
 }
 
-export { setDbms, setServer, setDbUser, setDbPwd, setDbname, setCfPath, setCfeName }
+const setCfePath = (args) => {
+	if (!args.cfepath) {
+		printError(ARGS_ERROR.cfepath);
+	} else {
+		return args.cfepath;
+	}
+}
+
+export { setDbms, setServer, setDbUser, setDbPwd, setDbname, setCfPath, setCfeName, setCfePath }

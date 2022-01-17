@@ -4,7 +4,7 @@ import { getArgs } from './helpers/args.helper.js';
 import { printHelp, printArgs, printVersion } from './services/log.service.js';
 import { setParams } from './helpers/storage.helper.js';
 import { getAllValue } from './services/storage.service.js';
-import { getLoadLine, getUpdateLine } from './helpers/ibcmd.helper.js';
+import { getLoadLine, getUpdateLine, getLoadExtLine } from './helpers/ibcmd.helper.js';
 
 const initCli = async () => {
 	const args = getArgs(process.argv);
@@ -31,6 +31,13 @@ const initCli = async () => {
 	if (args.update) {
 		const data = await getAllValue();
 		const line = await getUpdateLine(data);
+		if (line) {
+			return run(data.user, data.password, line);
+		};
+	};
+	if (args.loadext) {
+		const data = await getAllValue();
+		const line = await getLoadExtLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
