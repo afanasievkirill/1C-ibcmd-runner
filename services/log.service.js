@@ -10,7 +10,7 @@ const printSuccess = (data) => {
 };
 
 const printVersion = () => {
-    console.log(chalk.bgGray(' VERSION ') + ' ' + '1.0.0');
+    console.log(chalk.bgGray(' VERSION ') + ' ' + '1.0.1');
 };
 
 const printData = (message) => {

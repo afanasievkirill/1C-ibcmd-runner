@@ -1,10 +1,10 @@
 {
   "name": "1c-ibcmd-runner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Библиотека взаимодействия с Автономным сервером 1С.",
   "main": "index.js",
   "bin": {
-    "1c-ibcmd-runner": "index.js"
+    "1c-ibcmd": "./index.js"
   },
   "type": "module",
   "scripts": {
