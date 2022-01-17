@@ -22,7 +22,7 @@ const getLoadLine = (args) => {
 	];
 }
 
-const updateLine = (args) => {
+const getUpdateLine = (args) => {
 	return [
 		"infobase",
 		"config",
@@ -41,4 +41,4 @@ const updateLine = (args) => {
 	]
 }
 
-export { getLoadLine, updateLine }
+export { getLoadLine, getUpdateLine }

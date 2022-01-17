@@ -1,18 +1,19 @@
-import { ARGS_ERROR } from '../constants/args.constants.js';
+import { ARGS_ERROR, DB_TYPE } from '../constants/args.constants.js';
+import { printError } from '../services/log.service.js';
 
 const setDbms = (args) => {
 	if (!args.dbms) {
-		return printError(ARGS_ERROR.dbms);
+		printError(ARGS_ERROR.dbms);
 	};
 	if (args.dbms != DB_TYPE.MSSQLServer && args.dbms != DB_TYPE.PostgreSQL) {
-		return printError(ARGS_ERROR.dbtype);
+		printError(ARGS_ERROR.dbtype);
 	};
 	return args.dbms
 }
 
 const setServer = (args) => {
 	if (!args.server) {
-		return printError(ARGS_ERROR.server);
+		printError(ARGS_ERROR.server);
 	} else {
 		return args.server;
 	};
@@ -20,7 +21,7 @@ const setServer = (args) => {
 
 const setDbname = (args) => {
 	if (!args.dbname) {
-		return printError(ARGS_ERROR.dbname);
+		printError(ARGS_ERROR.dbname);
 	} else {
 		return args.dbname;
 	};
@@ -28,7 +29,7 @@ const setDbname = (args) => {
 
 const setDbUser = (args) => {
 	if (!args.dbuser) {
-		return printError(ARGS_ERROR.dbuser);
+		printError(ARGS_ERROR.dbuser);
 	} else {
 		return args.dbuser;
 	}
@@ -36,7 +37,7 @@ const setDbUser = (args) => {
 
 const setDbPwd = (args) => {
 	if (!args.dbpwd) {
-		return printError(ARGS_ERROR.dbpwd);
+		printError(ARGS_ERROR.dbpwd);
 	} else {
 		return args.dbpwd;
 	}
@@ -44,7 +45,7 @@ const setDbPwd = (args) => {
 
 const setCfPath = (args) => {
 	if (!args.cfpath) {
-		return printError(ARGS_ERROR.cfpath);
+		printError(ARGS_ERROR.cfpath);
 	} else {
 		return args.cfpath;
 	}
@@ -52,7 +53,7 @@ const setCfPath = (args) => {
 
 const setCfeName = (args) => {
 	if (!args.cfename) {
-		return printError(ARGS_ERROR.cfename);
+		printError(ARGS_ERROR.cfename);
 	} else {
 		return args.cfename;
 	}

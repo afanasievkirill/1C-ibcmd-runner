@@ -6,10 +6,10 @@ import { setParams } from './helpers/storage.helper.js';
 import { getAllValue } from './services/storage.service.js';
 import { getLoadLine, getUpdateLine } from './helpers/ibcmd.helper.js';
 
-const initCli = () => {
+const initCli = async () => {
 	const args = getArgs(process.argv);
 	if (args) {
-		setParams(args);
+		await setParams(args);
 	};
 	if (args.help) {
 		return printHelp();
@@ -18,12 +18,14 @@ const initCli = () => {
 		return printVersion();
 	}
 	if (args.param) {
-		const data = getAllValue();
+		const data = await getAllValue();
 		return printArgs(data);
 	};
 	if (args.load) {
-		const data = getAllValue();
+		const data = await getAllValue();
+		console.log(data)
 		const line = getLoadLine(data);
+		console.log(line)
 		if (line) {
 			return run(data.user, data.password, line);
 		};

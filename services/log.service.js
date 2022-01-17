@@ -5,6 +5,10 @@ const printError = (error) => {
     console.log(chalk.bgRed(' ERROR ') + ' ' + error);
 };
 
+const printDataUndefined = (string) => {
+    console.log(chalk.bgRed(' UNDEFINED ') + ' ' + string);
+};
+
 const printSuccess = (data) => {
     console.log(chalk.bgGreen(' SUCCESS ') + ' ' + data);
 };
