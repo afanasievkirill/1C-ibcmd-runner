@@ -38,6 +38,7 @@ const initCli = async () => {
 	if (args.loadext) {
 		const data = await getAllValue();
 		const line = await getLoadExtLine(data);
+		console.log(line)
 		if (line) {
 			return run(data.user, data.password, line);
 		};
@@ -45,6 +46,7 @@ const initCli = async () => {
 	if (args.updateext) {
 		const data = await getAllValue();
 		const line = await getUpdateExtLine(data);
+		console.log(line)
 		if (line) {
 			return run(data.user, data.password, line);
 		};
