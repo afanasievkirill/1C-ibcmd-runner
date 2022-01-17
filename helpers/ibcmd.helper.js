@@ -79,7 +79,8 @@ const getUpdateExtLine = async (args) => {
 		`${setDbUser(args)}`,
 		"--db-pwd",
 		`${setDbPwd(args)}`,
-		`--extension=${setCfeName(args)}`
+		`--extension=${setCfeName(args)}`,
+		"--force"
 	]
 }
 
