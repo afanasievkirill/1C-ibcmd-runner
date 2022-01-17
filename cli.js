@@ -4,7 +4,7 @@ import { getArgs } from './helpers/args.helper.js';
 import { printHelp, printArgs, printVersion } from './services/log.service.js';
 import { setParams } from './helpers/storage.helper.js';
 import { getAllValue } from './services/storage.service.js';
-import { getCmd } from './helpers/ibcmd.helper.js';
+import { getLoadLine, getUpdateLine } from './helpers/ibcmd.helper.js';
 
 const initCli = () => {
 	const args = getArgs(process.argv);
@@ -23,7 +23,14 @@ const initCli = () => {
 	};
 	if (args.load) {
 		const data = getAllValue();
-		const line = getCmd(data);
+		const line = getLoadLine(data);
+		if (line) {
+			return run(data.user, data.password, line);
+		};
+	};
+	if (args.update) {
+		const data = getAllValue();
+		const line = getUpdateLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};

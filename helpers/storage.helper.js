@@ -83,6 +83,14 @@ const setParams = async (args) => {
 			ARGS_ERROR.password
 		);
 	};
+	if (args.cfename) {
+		await setKeyValue(
+			ARGS_KEY.cfename,
+			args.cfename,
+			ARGS_SUCCESS.cfename,
+			ARGS_ERROR.cfename
+		);
+	};
 };
 
 const setKeyValue = async (key, value, success, error) => {
