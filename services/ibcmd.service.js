@@ -16,7 +16,6 @@ const run = (login, password, jobParams) => {
 
 	ls.stderr.on('data', data => {
 		printError(data.toString());
-
 	});
 
 	ls.on('error', (error) => {

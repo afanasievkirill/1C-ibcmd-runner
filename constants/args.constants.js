@@ -1,6 +1,7 @@
 const ARGS_KEY = {
 	cfpath: 'cfpath',
 	cfepath: 'cfepath',
+	parampath: 'parampath',
 	dbms: 'dbms',
 	server: 'server',
 	dbname: 'dbname',

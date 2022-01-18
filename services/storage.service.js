@@ -19,11 +19,6 @@ const getWorkDirectory = async () => {
 	if (!isExist(wortDirPath)) {
 		await promises.mkdir(wortDirPath);
 	}
-	/*else {
-		await promises.rmdir(wortDirPath);
-		await promises.mkdir(wortDirPath);
-	}
-	*/
 	return wortDirPath;
 }
 
@@ -36,9 +31,9 @@ const getKeyValue = async (key) => {
 	return undefined;
 };
 
-const getAllValue = async () => {
-	if (await isExist(filePath)) {
-		const file = await promises.readFile(filePath);
+const getAllValue = async (args) => {
+	if (await isExist(args.parampath || filePath)) {
+		const file = await promises.readFile(args.prampath || filePath);
 		const data = JSON.parse(file);
 		return data
 	}
