@@ -18,25 +18,25 @@ const initCli = async () => {
 		return printVersion();
 	}
 	if (args.param) {
-		const data = await getAllValue(args);
+		const data = await getAllValue();
 		return printArgs(data);
 	};
 	if (args.load) {
-		const data = await getAllValue(args);
+		const data = await getAllValue();
 		const line = await getLoadLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
 	};
 	if (args.update) {
-		const data = await getAllValue(args);
+		const data = await getAllValue();
 		const line = await getUpdateLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
 	};
 	if (args.loadext) {
-		const data = await getAllValue(args);
+		const data = await getAllValue();
 		const line = await getLoadExtLine(data);
 		console.log(line)
 		if (line) {

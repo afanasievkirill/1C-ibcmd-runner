@@ -31,9 +31,9 @@ const getKeyValue = async (key) => {
 	return undefined;
 };
 
-const getAllValue = async (args) => {
-	if (await isExist(args.parampath || filePath)) {
-		const file = await promises.readFile(args.prampath || filePath);
+const getAllValue = async () => {
+	if (await isExist(filePath)) {
+		const file = await promises.readFile(filePath);
 		const data = JSON.parse(file);
 		return data
 	}
