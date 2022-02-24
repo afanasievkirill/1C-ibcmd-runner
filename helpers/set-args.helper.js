@@ -14,6 +14,7 @@ const setDbms = (args) => {
 const setServer = (args) => {
 	if (!args.server) {
 		printError(ARGS_ERROR.server);
+		throw new Error();
 	} else {
 		return args.server;
 	};
@@ -22,6 +23,7 @@ const setServer = (args) => {
 const setDbname = (args) => {
 	if (!args.dbname) {
 		printError(ARGS_ERROR.dbname);
+		throw new Error();
 	} else {
 		return args.dbname;
 	};
@@ -30,6 +32,7 @@ const setDbname = (args) => {
 const setDbUser = (args) => {
 	if (!args.dbuser) {
 		printError(ARGS_ERROR.dbuser);
+		throw new Error();
 	} else {
 		return args.dbuser;
 	}
@@ -38,6 +41,7 @@ const setDbUser = (args) => {
 const setDbPwd = (args) => {
 	if (!args.dbpwd) {
 		printError(ARGS_ERROR.dbpwd);
+		throw new Error();
 	} else {
 		return args.dbpwd;
 	}
@@ -46,6 +50,7 @@ const setDbPwd = (args) => {
 const setCfPath = (args) => {
 	if (!args.cfpath) {
 		printError(ARGS_ERROR.cfpath);
+		throw new Error();
 	} else {
 		return args.cfpath;
 	}
@@ -54,6 +59,7 @@ const setCfPath = (args) => {
 const setCfeName = (args) => {
 	if (!args.cfename) {
 		printError(ARGS_ERROR.cfename);
+		throw new Error();
 	} else {
 		return args.cfename;
 	}
@@ -62,6 +68,7 @@ const setCfeName = (args) => {
 const setCfePath = (args) => {
 	if (!args.cfepath) {
 		printError(ARGS_ERROR.cfepath);
+		throw new Error();
 	} else {
 		return args.cfepath;
 	}

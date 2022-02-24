@@ -17,26 +17,24 @@ const initCli = async () => {
 	if (args.version) {
 		return printVersion();
 	}
+	const data = await getAllValue();
 	if (args.param) {
 		const data = await getAllValue();
 		return printArgs(data);
 	};
 	if (args.load) {
-		const data = await getAllValue();
 		const line = await getLoadLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
 	};
 	if (args.update) {
-		const data = await getAllValue();
 		const line = await getUpdateLine(data);
 		if (line) {
 			return run(data.user, data.password, line);
 		};
 	};
 	if (args.loadext) {
-		const data = await getAllValue();
 		const line = await getLoadExtLine(data);
 		console.log(line)
 		if (line) {
@@ -44,7 +42,6 @@ const initCli = async () => {
 		};
 	};
 	if (args.updateext) {
-		const data = await getAllValue();
 		const line = await getUpdateExtLine(data);
 		console.log(line)
 		if (line) {
