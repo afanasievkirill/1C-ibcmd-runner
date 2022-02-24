@@ -1,0 +1,146 @@
+{
+	"extends": "airbnb",
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"rules": {
+		//Временно отключены из за необходимости более детально разобраться
+		"linebreak-style": 0,
+		"react/prefer-stateless-function": 0,
+		"react/prop-types": 0,
+		"eqeqeq": 0,
+		"one-var": 0,
+		"no-underscore-dangle": 0,
+		"react/jsx-filename-extension": 0,
+		"max-len": 0,
+		"consistent-return": 0,
+		"no-param-reassign": 0,
+		"react/no-string-refs": 0,
+		"jsx-a11y/anchor-has-content": 0,
+		"import/no-named-as-default": 0,
+		"import/no-named-as-default-member": 0,
+		"react/no-unused-prop-types": 0,
+		"react/no-did-update-set-state": 0,
+		"jsx-a11y/img-has-alt": 0,
+		"array-callback-return": 0,
+		"new-cap": 0,
+		"jsx-a11y/label-has-for": 0,
+		"no-bitwise": 0,
+		"no-useless-escape": 0,
+		"no-case-declarations": 0,
+		"quote-props": 0,
+		"one-var-declaration-per-line": 0,
+		"space-unary-ops": 0,
+		"func-names": 0,
+		"generator-star-spacing": 0,
+		"object-curly-spacing": 0,
+		"import/no-unresolved": 0,
+		"import/extensions": 0,
+		"import/no-extraneous-dependencies": 0,
+		"import/no-webpack-loader-syntax": 0,
+		"newline-per-chained-call": 0,
+		// До этого правила
+		"class-methods-use-this": 0,
+		"no-confusing-arrow": 0,
+		"no-nested-ternary": 0,
+		"react/jsx-boolean-value": 0,
+		"import/prefer-default-export": 0,
+		"no-mixed-operators": 0,
+		"vars-on-top": 0,
+		"import/no-dynamic-require": 0,
+		"global-require": 0,
+		"eol-last": 0,
+		"arrow-parens": [
+			1,
+			"as-needed"
+		],
+		"arrow-body-style": [
+			1,
+			"as-needed"
+		],
+		"comma-dangle": [
+			1,
+			"never"
+		],
+		"curly": [
+			1,
+			"multi"
+		],
+		"no-plusplus": [
+			1,
+			{
+				"allowForLoopAfterthoughts": true
+			}
+		],
+		"jsx-quotes": [
+			1,
+			"prefer-single"
+		],
+		"no-trailing-spaces": 1,
+		"no-unused-vars": 1,
+		"import/newline-after-import": 1,
+		"react/no-unescaped-entities": 1,
+		"react/jsx-closing-bracket-location": 1,
+		"indent": 1,
+		"semi": 1,
+		"import/first": 1,
+		"react/sort-comp": 1,
+		"prefer-const": 1,
+		"react/jsx-space-before-closing": 1,
+		"object-shorthand": 1,
+		"spaced-comment": 1,
+		"no-var": 1,
+		"no-unneeded-ternary": 1,
+		"prefer-template": 1,
+		"no-useless-constructor": 1,
+		"prefer-arrow-callback": 1,
+		"no-shadow": 1,
+		"import/no-duplicates": 1,
+		"no-duplicate-imports": 1,
+		"no-lonely-if": 1,
+		"keyword-spacing": 1,
+		"space-before-blocks": 1,
+		"space-before-function-paren": 1,
+		"no-else-return": 1,
+		"no-multi-spaces": 1,
+		"block-spacing": 1,
+		"react/jsx-indent": 1,
+		"react/jsx-first-prop-new-line": 1,
+		"react/jsx-indent-props": 1,
+		"react/no-multi-comp": 1,
+		"no-use-before-define": 1,
+		"no-undef": 1,
+		"space-in-parens": 1,
+		"object-property-newline": [
+			1,
+			{
+				"allowMultiplePropertiesPerLine": true
+			}
+		],
+		"react/jsx-wrap-multilines": 1,
+		"jsx-a11y/no-static-element-interactions": 1,
+		"no-tabs": 1,
+		"padded-blocks": 1,
+		"no-extra-semi": 1,
+		"no-unused-expressions": 1,
+		"react/no-children-prop": 1,
+		"no-cond-assign": 1,
+		"react/jsx-no-bind": 1,
+		"react/forbid-prop-types": 1,
+		"brace-style": 1,
+		"react/self-closing-comp": 1,
+		"no-multiple-empty-lines": 1,
+		"space-infix-ops": 1,
+		"radix": [
+			1,
+			"as-needed"
+		],
+		"dot-notation": 1,
+		"comma-spacing": 1,
+		"operator-assignment": 1,
+		"default-case": 1,
+		"camelcase": 1,
+		"no-return-await": 1
+	}
+}

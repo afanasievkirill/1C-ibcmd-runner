@@ -3,7 +3,19 @@ import { join } from 'path';
 import { promises, rmdir } from 'fs';
 
 const filePath = join(homedir(), 'ibcmd-runner-data.json');
-const wortDirPath = join(homedir(), './ibcmd_work_directory')
+const wortDirPath = join(homedir(), './ibcmd_work_directory');
+
+const getMostRecentFile = (dir) => {
+	const files = orderReccentFiles(dir);
+	return files.file ? files[0].file : undefined;
+};
+
+const orderReccentFiles = (dir) => {
+	return fs.readdirSync(dir)
+		.filter((file) => fs.lstatSync(path.join(dir, file)).isFile())
+		.map((file) => ({ file, mtime: fs.lstatSync(path.join(dir, file)).mtime }))
+		.sort((a, b) => b.mtime.getTime() - a.mtime.getTime());
+};
 
 const saveKeyValue = async (key, value) => {
 	let data = {};
@@ -49,4 +61,4 @@ const isExist = async (path) => {
 	}
 };
 
-export { saveKeyValue, getKeyValue, getAllValue, getWorkDirectory };
+export { saveKeyValue, getKeyValue, getAllValue, getWorkDirectory, getMostRecentFile };

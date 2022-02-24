@@ -83,4 +83,18 @@ params:
 
 ```cmd
 1c-cli -param
+
+ CURRENT ARGS 
+{
+    "dbms": "MSSQLServer",
+    "server": "MSSQLServer",
+    "cfpath": "//folder/to/cf/file",
+    "cfepath": "//folder/to/cfe/file",
+    "dbname": "test_base",
+    "dbuser": "sa",
+    "dbpwd": "qwerty",
+    "user": "Администратор",
+    "password": "123",
+    "cfename": "_расширениеЕРПБазовая"
+}
 ```

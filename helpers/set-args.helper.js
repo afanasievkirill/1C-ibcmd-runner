@@ -74,4 +74,13 @@ const setCfePath = (args) => {
 	}
 }
 
-export { setDbms, setServer, setDbUser, setDbPwd, setDbname, setCfPath, setCfeName, setCfePath }
+const setSqlBackupPath = (args) => {
+	if (!args.sqlbackuppath) {
+		printError(ARGS_ERROR.sqlbackuppath);
+		throw new Error();
+	} else {
+		return args.sqlbackuppath;
+	}
+}
+
+export { setDbms, setServer, setDbUser, setDbPwd, setDbname, setCfPath, setCfeName, setCfePath, setSqlBackupPath }

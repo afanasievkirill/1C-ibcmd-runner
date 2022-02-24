@@ -19,6 +19,14 @@ const setParams = async (args) => {
 			ARGS_ERROR.cfepath
 		);
 	};
+	if (args.sqlbackuppath) {
+		await setKeyValue(
+			ARGS_KEY.sqlbackuppath,
+			args.sqlbackuppath,
+			ARGS_SUCCESS.sqlbackuppath,
+			ARGS_ERROR.sqlbackuppath
+		);
+	};
 	if (args.dbms) {
 		await setKeyValue(
 			ARGS_KEY.dbms,
