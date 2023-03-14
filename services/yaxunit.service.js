@@ -1,12 +1,14 @@
 import { exec, spawn } from 'child_process';
 import { printSuccess, printError, printData } from './log.service.js';
 
-const sqlRun = (jobParams) => {
+const run = (login, password, jobParams) => {
 	exec('chcp 65001', (error, stdout, stderr) => {
 		printSuccess(stdout);
 	});
 
-	const ls = spawn("sqlcmd", jobParams);
+	const ls = spawn("ibcmd", jobParams);
+
+	ls.stdin.write(`${login}\n${password}\ny\ny\n`);
 
 	ls.stdout.on('data', data => {
 		printData(data.toString());
@@ -25,4 +27,4 @@ const sqlRun = (jobParams) => {
 	});
 }
 
-export { sqlRun };
+export { run };

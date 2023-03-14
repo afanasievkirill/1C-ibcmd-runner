@@ -11,7 +11,10 @@ const ARGS_KEY = {
 	name: 'name',
 	user: 'user',
 	password: 'password',
-	cfename: 'cfename'
+	cfename: 'cfename',
+	onecpath: 'onecpath',
+	onecserver: 'onecserver',
+	onecbase: 'onecbase',
 };
 
 const ARGS_SUCCESS = {

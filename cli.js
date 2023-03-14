@@ -5,6 +5,8 @@ import { printHelp, printArgs, printVersion } from './services/log.service.js';
 import { setParams } from './helpers/storage.helper.js';
 import { getAllValue } from './services/storage.service.js';
 import { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine } from './helpers/ibcmd.helper.js';
+import { getSqlRestoreLine } from './helpers/sql.helper.js';
+import { sqlRun } from './services/sql.service.js';
 
 const initCli = async () => {
 	const args = getArgs(process.argv);
@@ -48,6 +50,18 @@ const initCli = async () => {
 			return run(data.user, data.password, line);
 		};
 	};
+	if (args.sqlbackup) {
+		const line = await getSqlBackupLine(data);
+		if (line) {
+			return sqlRun(line);
+		}
+	};
+	if (args.sqlrestore) {
+		const line = getSqlRestoreLine(data);
+		if (line) {
+			return sqlRun(line);
+		}
+	}
 }
 
 initCli();
