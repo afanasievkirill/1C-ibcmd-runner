@@ -10,7 +10,12 @@
   "type": "module",
   "scripts": {
     "start": "node cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write ./helpers/** ./services/**",
+    "lint": "eslint ./helpers/** ./services/**",
+    "lint:fix": "eslint ./helpers/** ./services/** --fix",
+    "codestyle": "npm run prettier && npm run eslint ./helpers/** ./services/**"
+
   },
   "repository": {
     "type": "git",

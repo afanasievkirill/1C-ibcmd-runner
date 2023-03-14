@@ -4,12 +4,12 @@ import { printError } from '../services/log.service.js';
 const setDbms = (args) => {
 	if (!args.dbms) {
 		printError(ARGS_ERROR.dbms);
-	};
+	}
 	if (args.dbms != DB_TYPE.MSSQLServer && args.dbms != DB_TYPE.PostgreSQL) {
 		printError(ARGS_ERROR.dbtype);
-	};
-	return args.dbms
-}
+	}
+	return args.dbms;
+};
 
 const setServer = (args) => {
 	if (!args.server) {
@@ -17,8 +17,8 @@ const setServer = (args) => {
 		throw new Error();
 	} else {
 		return args.server;
-	};
-}
+	}
+};
 
 const setDbname = (args) => {
 	if (!args.dbname) {
@@ -26,8 +26,8 @@ const setDbname = (args) => {
 		throw new Error();
 	} else {
 		return args.dbname;
-	};
-}
+	}
+};
 
 const setDbUser = (args) => {
 	if (!args.dbuser) {
@@ -36,7 +36,7 @@ const setDbUser = (args) => {
 	} else {
 		return args.dbuser;
 	}
-}
+};
 
 const setDbPwd = (args) => {
 	if (!args.dbpwd) {
@@ -45,7 +45,7 @@ const setDbPwd = (args) => {
 	} else {
 		return args.dbpwd;
 	}
-}
+};
 
 const setCfPath = (args) => {
 	if (!args.cfpath) {
@@ -54,7 +54,7 @@ const setCfPath = (args) => {
 	} else {
 		return args.cfpath;
 	}
-}
+};
 
 const setCfeName = (args) => {
 	if (!args.cfename) {
@@ -63,7 +63,7 @@ const setCfeName = (args) => {
 	} else {
 		return args.cfename;
 	}
-}
+};
 
 const setCfePath = (args) => {
 	if (!args.cfepath) {
@@ -72,7 +72,7 @@ const setCfePath = (args) => {
 	} else {
 		return args.cfepath;
 	}
-}
+};
 
 const setSqlBackupPath = (args) => {
 	if (!args.sqlbackuppath) {
@@ -81,6 +81,16 @@ const setSqlBackupPath = (args) => {
 	} else {
 		return args.sqlbackuppath;
 	}
-}
+};
 
-export { setDbms, setServer, setDbUser, setDbPwd, setDbname, setCfPath, setCfeName, setCfePath, setSqlBackupPath }
+export {
+	setDbms,
+	setServer,
+	setDbUser,
+	setDbPwd,
+	setDbname,
+	setCfPath,
+	setCfeName,
+	setCfePath,
+	setSqlBackupPath,
+};

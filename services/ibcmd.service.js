@@ -6,15 +6,15 @@ const run = (login, password, jobParams) => {
 		printSuccess(stdout);
 	});
 
-	const ls = spawn("ibcmd", jobParams);
+	const ls = spawn('ibcmd', jobParams);
 
 	ls.stdin.write(`${login}\n${password}\ny\ny\n`);
 
-	ls.stdout.on('data', data => {
+	ls.stdout.on('data', (data) => {
 		printData(data.toString());
 	});
 
-	ls.stderr.on('data', data => {
+	ls.stderr.on('data', (data) => {
 		printError(data.toString());
 	});
 
@@ -22,9 +22,9 @@ const run = (login, password, jobParams) => {
 		printError(error.message);
 	});
 
-	ls.on('close', code => {
+	ls.on('close', (code) => {
 		printSuccess(code);
 	});
-}
+};
 
 export { run };

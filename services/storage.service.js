@@ -1,11 +1,11 @@
 import { homedir } from 'os';
 import { join } from 'path';
 import { promises, rmdir } from 'fs';
-import {YAXUNIT_CONFIG} from '../constants/yaxunit.constans'
+import { YAXUNIT_CONFIG } from '../constants/yaxunit.constans';
 
 const filePath = join(homedir(), 'ibcmd-runner-data.json');
 const wortDirPath = join(homedir(), './ibcmd_work_directory');
-const yaxunitFilePath = join(homedir(), 'yaxunit-conf.json')
+const yaxunitFilePath = join(homedir(), 'yaxunit-conf.json');
 
 const getMostRecentFile = (dir) => {
 	const files = orderReccentFiles(dir);
@@ -13,7 +13,8 @@ const getMostRecentFile = (dir) => {
 };
 
 const orderReccentFiles = (dir) => {
-	return fs.readdirSync(dir)
+	return fs
+		.readdirSync(dir)
 		.filter((file) => fs.lstatSync(path.join(dir, file)).isFile())
 		.map((file) => ({ file, mtime: fs.lstatSync(path.join(dir, file)).mtime }))
 		.sort((a, b) => b.mtime.getTime() - a.mtime.getTime());
@@ -30,18 +31,18 @@ const saveKeyValue = async (key, value) => {
 };
 
 const saveYaxunitConfigFile = async () => {
-	const data = YAXUNIT_CONFIG
-	if(!isExist(yaxunitFilePath)) {
-		await promises.writeFile(yaxunitFilePath, JSON.stringify(data))
+	const data = YAXUNIT_CONFIG;
+	if (!isExist(yaxunitFilePath)) {
+		await promises.writeFile(yaxunitFilePath, JSON.stringify(data));
 	}
-} 
+};
 
 const getWorkDirectory = async () => {
 	if (!isExist(wortDirPath)) {
 		await promises.mkdir(wortDirPath);
 	}
 	return wortDirPath;
-}
+};
 
 const getKeyValue = async (key) => {
 	if (await isExist(filePath)) {
@@ -56,7 +57,7 @@ const getAllValue = async () => {
 	if (await isExist(filePath)) {
 		const file = await promises.readFile(filePath);
 		const data = JSON.parse(file);
-		return data
+		return data;
 	}
 	return undefined;
 };
@@ -70,4 +71,11 @@ const isExist = async (path) => {
 	}
 };
 
-export { saveKeyValue, getKeyValue, getAllValue, getWorkDirectory, getMostRecentFile, saveYaxunitConfigFile };
+export {
+	saveKeyValue,
+	getKeyValue,
+	getAllValue,
+	getWorkDirectory,
+	getMostRecentFile,
+	saveYaxunitConfigFile,
+};

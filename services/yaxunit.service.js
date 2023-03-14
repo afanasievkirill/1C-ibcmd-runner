@@ -1,14 +1,13 @@
 import { exec, spawn } from 'child_process';
 import { printSuccess, printError, printData } from './log.service.js';
 
-const run = (login, password, jobParams) => {
+const run = (login, password, onecPath, jobParams) => {
 	exec('chcp 65001', (error, stdout, stderr) => {
 		printSuccess(stdout);
 	});
 
-	const ls = spawn("ibcmd", jobParams);
+	const ls = spawn(`${onecPath}`, jobParams);
 
-	ls.stdin.write(`${login}\n${password}\ny\ny\n`);
 
 	ls.stdout.on('data', data => {
 		printData(data.toString());

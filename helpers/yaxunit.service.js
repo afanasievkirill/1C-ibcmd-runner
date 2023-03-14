@@ -1,7 +1,5 @@
-const getYaxUnitLine = async(args) => {
-    return [
+const getYaxUnitLine = async (args) => {
+	return [];
+};
 
-    ]
-}
-
-export {getYaxUnitLine}
+export { getYaxUnitLine };

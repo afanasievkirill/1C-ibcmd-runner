@@ -1,87 +1,94 @@
 import { getWorkDirectory } from '../services/storage.service.js';
-import { setCfPath, setDbms, setDbname, setDbPwd, setDbUser, setServer, setCfePath, setCfeName } from './set-args.helper.js';
+import {
+	setCfPath,
+	setDbms,
+	setDbname,
+	setDbPwd,
+	setDbUser,
+	setServer,
+	setCfePath,
+	setCfeName,
+} from './set-args.helper.js';
 
 const getLoadLine = async (args) => {
-
 	return [
-		"infobase",
-		"config",
-		"import",
+		'infobase',
+		'config',
+		'import',
 		`--data=${await getWorkDirectory()}`,
-		"--dbms",
+		'--dbms',
 		`${setDbms(args)}`,
-		"--db-server",
+		'--db-server',
 		`${setServer(args)}`,
-		"--db-name",
+		'--db-name',
 		`${setDbname(args)}`,
-		"--db-user",
+		'--db-user',
 		`${setDbUser(args)}`,
-		"--db-pwd",
+		'--db-pwd',
 		`${setDbPwd(args)}`,
-		`${setCfPath(args)}`
+		`${setCfPath(args)}`,
 	];
-}
+};
 
 const getUpdateLine = async (args) => {
 	return [
-		"infobase",
-		"config",
-		"apply",
+		'infobase',
+		'config',
+		'apply',
 		`--data=${await getWorkDirectory()}`,
-		"--dbms",
+		'--dbms',
 		`${setDbms(args)}`,
-		"--db-server",
+		'--db-server',
 		`${setServer(args)}`,
-		"--db-name",
+		'--db-name',
 		`${setDbname(args)}`,
-		"--db-user",
+		'--db-user',
 		`${setDbUser(args)}`,
-		"--db-pwd",
+		'--db-pwd',
 		`${setDbPwd(args)}`,
-
-	]
-}
+	];
+};
 
 const getLoadExtLine = async (args) => {
 	return [
-		"infobase",
-		"config",
-		"import",
+		'infobase',
+		'config',
+		'import',
 		`--data=${await getWorkDirectory()}`,
-		"--dbms",
+		'--dbms',
 		`${setDbms(args)}`,
-		"--db-server",
+		'--db-server',
 		`${setServer(args)}`,
-		"--db-name",
+		'--db-name',
 		`${setDbname(args)}`,
-		"--db-user",
+		'--db-user',
 		`${setDbUser(args)}`,
-		"--db-pwd",
+		'--db-pwd',
 		`${setDbPwd(args)}`,
 		`--extension=${setCfeName(args)}`,
-		`${setCfePath(args)}`
-	]
-}
+		`${setCfePath(args)}`,
+	];
+};
 
 const getUpdateExtLine = async (args) => {
 	return [
-		"infobase",
-		"config",
-		"apply",
+		'infobase',
+		'config',
+		'apply',
 		`--data=${await getWorkDirectory()}`,
-		"--dbms",
+		'--dbms',
 		`${setDbms(args)}`,
-		"--db-server",
+		'--db-server',
 		`${setServer(args)}`,
-		"--db-name",
+		'--db-name',
 		`${setDbname(args)}`,
-		"--db-user",
+		'--db-user',
 		`${setDbUser(args)}`,
-		"--db-pwd",
+		'--db-pwd',
 		`${setDbPwd(args)}`,
 		`--extension=${setCfeName(args)}`,
-		"--force"
-	]
-}
+		'--force',
+	];
+};
 
-export { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine }
+export { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine };

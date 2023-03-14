@@ -1,4 +1,4 @@
-import { setServer, setDbUser, setDbname } from './set-args.helper'
+import { setServer, setDbUser, setDbname } from './set-args.helper';
 
 const getSqlBackupLine = (args) => {
 	return [
@@ -7,7 +7,7 @@ const getSqlBackupLine = (args) => {
 		'- U',
 		`${setDbUser(args)}`,
 		' - Q',
-		'\"BACKUP',
+		'"BACKUP',
 		' DATABASE',
 		`[${setDbname}]`,
 		' TO',
@@ -19,15 +19,15 @@ const getSqlBackupLine = (args) => {
 		' NOINIT,',
 		' NAME',
 		' = ',
-		'\'demodb-full\',',
+		"'demodb-full',",
 		'SKIP,',
 		' NOREWIND,',
 		' NOUNLOAD,',
 		'STATS',
 		' =  ',
-		'10\"'
-	]
-}
+		'10"',
+	];
+};
 
 const getSqlRestoreLine = (args) => {
 	return [
@@ -36,7 +36,7 @@ const getSqlRestoreLine = (args) => {
 		'- U',
 		`${setDbUser(args)}`,
 		' - Q',
-		'\"RESTORE',
+		'"RESTORE',
 		' DATABASE',
 		`[${setDbname}]`,
 		' TO',
@@ -48,14 +48,14 @@ const getSqlRestoreLine = (args) => {
 		' NOINIT,',
 		' NAME',
 		' = ',
-		'\'demodb-full\',',
+		"'demodb-full',",
 		'SKIP,',
 		' NOREWIND,',
 		' NOUNLOAD,',
 		'STATS',
 		' =  ',
-		'10\"'
-	]
-}
+		'10"',
+	];
+};
 
-export { getSqlBackupLine, getSqlRestoreLine }
+export { getSqlBackupLine, getSqlRestoreLine };

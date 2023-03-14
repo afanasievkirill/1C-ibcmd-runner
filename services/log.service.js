@@ -2,28 +2,28 @@ import chalk from 'chalk';
 import dedent from 'dedent-js';
 
 const printError = (error) => {
-    console.log(chalk.bgRed(' ERROR ') + ' ' + error);
+	console.log(chalk.bgRed(' ERROR ') + ' ' + error);
 };
 
 const printDataUndefined = (string) => {
-    console.log(chalk.bgRed(' UNDEFINED ') + ' ' + string);
+	console.log(chalk.bgRed(' UNDEFINED ') + ' ' + string);
 };
 
 const printSuccess = (data) => {
-    console.log(chalk.bgGreen(' SUCCESS ') + ' ' + data);
+	console.log(chalk.bgGreen(' SUCCESS ') + ' ' + data);
 };
 
 const printVersion = () => {
-    console.log(chalk.bgGray(' VERSION ') + ' ' + '1.0.1');
+	console.log(chalk.bgGray(' VERSION ') + ' ' + '1.0.1');
 };
 
 const printData = (message) => {
-    console.log(chalk.bgBlue(' DATA ') + ' ' + message);
+	console.log(chalk.bgBlue(' DATA ') + ' ' + message);
 };
 
 const printHelp = () => {
-    console.log(
-        dedent`${chalk.bgCyan(' HELP ')}
+	console.log(
+		dedent`${chalk.bgCyan(' HELP ')}
             jobs:
             -help             : Вызов справки.
             -version          : получение версии.
@@ -47,14 +47,14 @@ const printHelp = () => {
             -name []          : Имя базы 1С.
             -user []          : Логин пользователя 1С.
             -password []      : Пароль пользователя 1С.	
-            `
-    );
+            `,
+	);
 };
 
 const printArgs = (args) => {
-    console.log(dedent`${chalk.bgCyan(' CURRENT ARGS ')}
+	console.log(dedent`${chalk.bgCyan(' CURRENT ARGS ')}
     ${JSON.stringify(args, null, 4)}
     `);
 };
 
-export { printHelp, printError, printSuccess, printData, printArgs, printVersion }
+export { printHelp, printError, printSuccess, printData, printArgs, printVersion };
