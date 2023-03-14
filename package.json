@@ -1,7 +1,7 @@
 {
   "name": "1c-ibcmd-runner",
-  "version": "1.4.1",
-  "description": "Библиотека взаимодействия с Автономным сервером 1С.",
+  "version": "1.4.2",
+  "description": "Библиотека взаимодействия c CLI 1С.",
   "main": "cli.js",
   "bin": {
     "1c-cli": "./cli.js",
