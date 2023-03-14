@@ -1,9 +1,11 @@
 import { homedir } from 'os';
 import { join } from 'path';
 import { promises, rmdir } from 'fs';
+import {YAXUNIT_CONFIG} from '../constants/yaxunit.constans'
 
 const filePath = join(homedir(), 'ibcmd-runner-data.json');
 const wortDirPath = join(homedir(), './ibcmd_work_directory');
+const yaxunitFilePath = join(homedir(), 'yaxunit-conf.json')
 
 const getMostRecentFile = (dir) => {
 	const files = orderReccentFiles(dir);
@@ -26,6 +28,13 @@ const saveKeyValue = async (key, value) => {
 	data[key] = value;
 	await promises.writeFile(filePath, JSON.stringify(data));
 };
+
+const saveYaxunitConfigFile = async () => {
+	const data = YAXUNIT_CONFIG
+	if(!isExist(yaxunitFilePath)) {
+		await promises.writeFile(yaxunitFilePath, JSON.stringify(data))
+	}
+} 
 
 const getWorkDirectory = async () => {
 	if (!isExist(wortDirPath)) {
@@ -61,4 +70,4 @@ const isExist = async (path) => {
 	}
 };
 
-export { saveKeyValue, getKeyValue, getAllValue, getWorkDirectory, getMostRecentFile };
+export { saveKeyValue, getKeyValue, getAllValue, getWorkDirectory, getMostRecentFile, saveYaxunitConfigFile };

@@ -3,7 +3,7 @@ import { run } from './services/ibcmd.service.js'
 import { getArgs } from './helpers/args.helper.js';
 import { printHelp, printArgs, printVersion } from './services/log.service.js';
 import { setParams } from './helpers/storage.helper.js';
-import { getAllValue } from './services/storage.service.js';
+import { getAllValue, saveYaxunitConfigFile } from './services/storage.service.js';
 import { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine } from './helpers/ibcmd.helper.js';
 import { getSqlRestoreLine } from './helpers/sql.helper.js';
 import { sqlRun } from './services/sql.service.js';
@@ -61,6 +61,10 @@ const initCli = async () => {
 		if (line) {
 			return sqlRun(line);
 		}
+	}
+	if (args.yaxunit){
+		await saveYaxunitConfigFile()
+		return printHelp();
 	}
 }
 
