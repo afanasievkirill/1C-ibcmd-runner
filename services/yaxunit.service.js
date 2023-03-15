@@ -1,7 +1,7 @@
 import { exec, spawn } from 'child_process';
 import { printSuccess, printError, printData } from './log.service.js';
 
-const run = (login, password, onecPath, jobParams) => {
+const runUnit = (onecPath, jobParams) => {
 	exec('chcp 65001', (error, stdout, stderr) => {
 		printSuccess(stdout);
 	});
@@ -25,4 +25,4 @@ const run = (login, password, onecPath, jobParams) => {
 	});
 };
 
-export { run };
+export { runUnit };

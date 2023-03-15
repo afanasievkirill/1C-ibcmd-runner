@@ -7,6 +7,8 @@ import { getAllValue, saveYaxunitConfigFile } from './services/storage.service.j
 import { getLoadLine, getUpdateLine, getLoadExtLine, getUpdateExtLine } from './helpers/ibcmd.helper.js';
 import { getSqlRestoreLine } from './helpers/sql.helper.js';
 import { sqlRun } from './services/sql.service.js';
+import {runUnit} from './services/yaxunit.service.js'
+import {getYaxUnitLine} from './helpers/yaxunit.helper.js'
 
 const initCli = async () => {
 	const args = getArgs(process.argv);
@@ -64,8 +66,10 @@ const initCli = async () => {
 	}
 	if (args.yaxunit){
 		await saveYaxunitConfigFile()
-		console.log("test")
-		return printHelp();
+		const line = getYaxUnitLine(data);
+		if (line) {
+			return runUnit(line);
+		}
 	}
 }
 

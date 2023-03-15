@@ -33,9 +33,7 @@ const saveKeyValue = async (key, value) => {
 const saveYaxunitConfigFile = async () => {
 	const data = await YAXUNIT_CONFIG();
 	console.log(data);
-	if (!isExist(yaxunitFilePath)) {
-		await promises.writeFile(yaxunitFilePath, JSON.stringify(data));
-	}
+	await promises.writeFile(yaxunitFilePath, JSON.stringify(data));
 };
 
 const getWorkDirectory = async () => {
