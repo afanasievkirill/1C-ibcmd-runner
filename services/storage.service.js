@@ -1,7 +1,7 @@
 import { homedir } from 'os';
 import { join } from 'path';
 import { promises, rmdir } from 'fs';
-import { YAXUNIT_CONFIG } from '../constants/yaxunit.constans';
+import { YAXUNIT_CONFIG } from '../constants/yaxunit.constants.js';
 
 const filePath = join(homedir(), 'ibcmd-runner-data.json');
 const wortDirPath = join(homedir(), './ibcmd_work_directory');
@@ -31,7 +31,8 @@ const saveKeyValue = async (key, value) => {
 };
 
 const saveYaxunitConfigFile = async () => {
-	const data = YAXUNIT_CONFIG;
+	const data = await YAXUNIT_CONFIG();
+	console.log(data);
 	if (!isExist(yaxunitFilePath)) {
 		await promises.writeFile(yaxunitFilePath, JSON.stringify(data));
 	}
@@ -78,4 +79,5 @@ export {
 	getWorkDirectory,
 	getMostRecentFile,
 	saveYaxunitConfigFile,
+	yaxunitFilePath,
 };

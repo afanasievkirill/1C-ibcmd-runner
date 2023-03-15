@@ -1,4 +1,4 @@
-import { setServer, setDbUser, setDbname } from './set-args.helper';
+import { setServer, setDbUser, setDbname } from './set-args.helper.js';
 
 const getSqlBackupLine = (args) => {
 	return [

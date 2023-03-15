@@ -1,6 +1,6 @@
 {
   "name": "1c-ibcmd-runner",
-  "version": "1.4.2",
+  "version": "1.4.10",
   "description": "Библиотека взаимодействия c CLI 1С.",
   "main": "cli.js",
   "bin": {

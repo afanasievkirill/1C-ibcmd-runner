@@ -1,5 +1,6 @@
 import { ARGS_ERROR, DB_TYPE } from '../constants/args.constants.js';
 import { printError } from '../services/log.service.js';
+import { yaxunitFilePath } from '../services/storage.service.js';
 
 const setDbms = (args) => {
 	if (!args.dbms) {
@@ -83,6 +84,55 @@ const setSqlBackupPath = (args) => {
 	}
 };
 
+const setYaxunitFilePath = async () => {
+	return await yaxunitFilePath;
+};
+
+const setPlatformPath = (args) => {
+	if (!args.onecpath) {
+		printError(ARGS_ERROR.onecpath);
+		throw new Error();
+	} else {
+		return args.onecpath;
+	}
+};
+
+const setOnecUser = (args) => {
+	if (!args.name) {
+		printError(ARGS_ERROR.name);
+		throw new Error();
+	} else {
+		return args.name;
+	}
+};
+
+const setOnecPassword = (args) => {
+	if (!args.password) {
+		printError(ARGS_ERROR.password);
+		throw new Error();
+	} else {
+		return args.password;
+	}
+};
+
+const setOnecServer = (args) => {
+	if (!args.onecserver) {
+		printError(ARGS_ERROR.onecserver);
+		throw new Error();
+	} else {
+		return args.onecserver;
+	}
+};
+
+const setOnecBase = (args) => {
+	if (!args.onecbase) {
+		printError(ARGS_ERROR.onecbase);
+		throw new Error();
+	} else {
+		return args.onecbase;
+	}
+};
+
 export {
 	setDbms,
 	setServer,
@@ -93,4 +143,10 @@ export {
 	setCfeName,
 	setCfePath,
 	setSqlBackupPath,
+	setYaxunitFilePath,
+	setPlatformPath,
+	setOnecUser,
+	setOnecPassword,
+	setOnecServer,
+	setOnecBase,
 };

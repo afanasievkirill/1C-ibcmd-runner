@@ -8,12 +8,11 @@ const run = (login, password, onecPath, jobParams) => {
 
 	const ls = spawn(`${onecPath}`, jobParams);
 
-
-	ls.stdout.on('data', data => {
+	ls.stdout.on('data', (data) => {
 		printData(data.toString());
 	});
 
-	ls.stderr.on('data', data => {
+	ls.stderr.on('data', (data) => {
 		printError(data.toString());
 	});
 
@@ -21,9 +20,9 @@ const run = (login, password, onecPath, jobParams) => {
 		printError(error.message);
 	});
 
-	ls.on('close', code => {
+	ls.on('close', (code) => {
 		printSuccess(code);
 	});
-}
+};
 
 export { run };

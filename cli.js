@@ -64,6 +64,7 @@ const initCli = async () => {
 	}
 	if (args.yaxunit){
 		await saveYaxunitConfigFile()
+		console.log("test")
 		return printHelp();
 	}
 }

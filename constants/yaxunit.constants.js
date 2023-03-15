@@ -1,7 +1,9 @@
-import {getWorkDirectory} from "../helpers/storage.helper"
+import {getWorkDirectory} from '../services/storage.service.js'
 
-const YAXUNIT_CONFIG =  {
-    "reportPath": `${await getWorkDirectory()}`,
+const YAXUNIT_CONFIG = async () =>{ 
+    const path = await getWorkDirectory()
+     return {
+    "reportPath": `${path}`,
     "reportFormat": "jUnit",
     "showReport": false,
     "closeAfterTests": true, 
@@ -13,6 +15,7 @@ const YAXUNIT_CONFIG =  {
     "settings":{
         "ВТранзакции": true
     }
+}
 }
 
 export {YAXUNIT_CONFIG}
