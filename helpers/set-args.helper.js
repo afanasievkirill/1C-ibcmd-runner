@@ -98,8 +98,8 @@ const setPlatformPath = (args) => {
 };
 
 const setOnecUser = (args) => {
-	if (!args.name) {
-		printError(ARGS_ERROR.name);
+	if (!args.user) {
+		printError(ARGS_ERROR.user);
 		throw new Error();
 	} else {
 		return args.name;

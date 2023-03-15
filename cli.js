@@ -68,7 +68,7 @@ const initCli = async () => {
 		await saveYaxunitConfigFile()
 		const line = getYaxUnitLine(data);
 		if (line) {
-			return runUnit(line);
+			return runUnit(data.onecpath, line);
 		}
 	}
 }
