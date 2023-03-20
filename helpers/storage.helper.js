@@ -44,6 +44,15 @@ const setParams = async (args) => {
 	if (args.cfename) {
 		await setKeyValue(ARGS_KEY.cfename, args.cfename, ARGS_SUCCESS.cfename, ARGS_ERROR.cfename);
 	}
+	if (args.onecpath) {
+		await setKeyValue(ARGS_KEY.onecpath, args.onecpath, ARGS_SUCCESS.onecpath, ARGS_ERROR.onecpath);
+	}
+	if (args.onecserver) {
+		await setKeyValue(ARGS_KEY.onecserver, args.onecserver, ARGS_SUCCESS.onecserver, ARGS_ERROR.onecserver);
+	}
+	if (args.onecbase) {
+		await setKeyValue(ARGS_KEY.onecbase, args.onecbase, ARGS_SUCCESS.onecbase, ARGS_ERROR.onecbase);
+	}
 };
 
 const setKeyValue = async (key, value, success, error) => {
